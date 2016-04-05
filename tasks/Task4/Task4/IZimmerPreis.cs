@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task2
+namespace Task4
 {
-    class Serialize
+    public interface IZimmerPreis
     {
+
+        int AnzZimmer { get; }
+
+        decimal Preis { get; }
+
     }
 }

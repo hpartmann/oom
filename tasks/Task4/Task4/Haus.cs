@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
 using System.Net;
+using Newtonsoft.Json;
 
-namespace Task2
+namespace Task4
 {
-    public class Haus
+    public class Haus : IZimmerPreis
     {
-        private decimal Fixpreis = 250000;
+        /*private decimal Fixpreis = 250000;*/
         private decimal member_Preis;
 
         /// <summary>
@@ -40,20 +41,13 @@ namespace Task2
 
         public string Türen { get; }
 
-        public int Zimmer { get; set; }
-
-        public decimal Preis
+        public int Zimmer
         {
-            get { return member_Preis; }
-            set
+            get; set;
+          /*set
             {
                 if (Zimmer < 4) member_Preis = Fixpreis;
-                else
-                {
-                    member_Preis = value;
-                }
-
-            }
+            }*/
         }
 
         public void UpdatePreis(decimal neuerPreis)
@@ -61,5 +55,20 @@ namespace Task2
             if (neuerPreis < 0) throw new ArgumentException("Preis darf nicht negativ sein.", nameof(neuerPreis));
             member_Preis = neuerPreis;
         }
+
+        #region IZimmerPreis implementation
+
+        public int AnzZimmer => Zimmer;
+
+        public decimal Preis
+        {
+            get { return member_Preis; }
+            set
+                {
+                    member_Preis = value;
+                }
+        }
+
+        #endregion
     }
 }

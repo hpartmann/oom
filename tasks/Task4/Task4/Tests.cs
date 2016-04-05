@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace Task2
+namespace Task4
 {
     [TestFixture]
     public class Tests
@@ -95,6 +95,7 @@ namespace Task2
 
         }
 
+        /*
         [Test]
         public void KannZimmerFixpreisDurchführen()
         {
@@ -104,6 +105,7 @@ namespace Task2
             Assert.IsTrue(Haus_x.Preis == 250000);
 
         }
+        */
 
         [Test]
         public void KannNichtNegativenPreisUpdaten()

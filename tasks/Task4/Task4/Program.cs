@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task2
+namespace Task4
 {
     class Program
     {
@@ -13,6 +14,9 @@ namespace Task2
             Haus Regina = new Haus("Prefa", "Josko", "Josko", 5, 350000);
             Haus Sonja = new Haus("Velux", "Internorm", "Josko", 6, 450000);
             Haus Mathilde = new Haus("Bramac", "Internorm", "Eckmaier", 7, 800000);
+            Eigentumswohnung Florid_Spitz = new Eigentumswohnung("xxxx", "Tischler", "Weru", 92581);
+            Eigentumswohnung Donaust_Maculan = new Eigentumswohnung("xxxx", "Internorm", "Josko", 93146);
+            Eigentumswohnung Brigitt_Hoech = new Eigentumswohnung("xxxx", "Josko", "Weru", 91467);
             Console.WriteLine("Haustyp: Dach|Fenster|Türen|Zimmer|Preis in Euro");
             Console.WriteLine("----------------------------------------");
             Console.WriteLine("Sonja: {0}|{1}|{2}|{3}|{4}", Sonja.Dach, Sonja.Fenster, Sonja.Türen, Sonja.Zimmer, Sonja.Preis);
@@ -28,19 +32,18 @@ namespace Task2
             Sonja.Zimmer = 3;
             Console.WriteLine("Sonja: {0}|{1}|{2}|{3}|{4}", Sonja.Dach, Sonja.Fenster, Sonja.Türen, Sonja.Zimmer, Sonja.Preis);
 
-            /*var Häuser = new []
+            var Wohnkombinationen = new IZimmerPreis[]
             {
-            new Haus("Prefa", "Josko", "Josko", 5, 350000);
-            new Haus("Velux", "Internorm", "Josko", 6, 450000);
-            new Haus("Bramac", "Internorm", "Eckmaier", 7, 800000);
+              Regina, Sonja, Mathilde,
+              Florid_Spitz, Donaust_Maculan, Brigitt_Hoech
+            };
 
+            foreach (var x in Wohnkombinationen)
+            {
+                Console.WriteLine($"{x} {x.AnzZimmer} {x.Preis}");
             }
 
-        foreach (var x in Häuser)
-            {
-            Console.WriteLine(x);
-            }
-            */
+            SerialDeserial.Run(Wohnkombinationen);
         }
     }
 }
