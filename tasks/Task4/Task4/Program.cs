@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+//using System.Text;
+//using System.Threading.Tasks;
 
 namespace Task4
 {
@@ -14,9 +14,9 @@ namespace Task4
             Haus Regina = new Haus("Prefa", "Josko", "Josko", 5, 350000);
             Haus Sonja = new Haus("Velux", "Internorm", "Josko", 6, 450000);
             Haus Mathilde = new Haus("Bramac", "Internorm", "Eckmaier", 7, 800000);
-            Eigentumswohnung Florid_Spitz = new Eigentumswohnung("xxxx", "Tischler", "Weru", 92581);
-            Eigentumswohnung Donaust_Maculan = new Eigentumswohnung("xxxx", "Internorm", "Josko", 93146);
-            Eigentumswohnung Brigitt_Hoech = new Eigentumswohnung("xxxx", "Josko", "Weru", 91467);
+            Eigentumswohnung Florid_Spitz = new Eigentumswohnung(92581, 70);
+            Eigentumswohnung Donaust_Maculan = new Eigentumswohnung(93146, 100);
+            Eigentumswohnung Brigitt_Hoech = new Eigentumswohnung(91467, 50);
             Console.WriteLine("Haustyp: Dach|Fenster|Türen|Zimmer|Preis in Euro");
             Console.WriteLine("----------------------------------------");
             Console.WriteLine("Sonja: {0}|{1}|{2}|{3}|{4}", Sonja.Dach, Sonja.Fenster, Sonja.Türen, Sonja.Zimmer, Sonja.Preis);

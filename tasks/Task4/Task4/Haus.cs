@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 using System.Globalization;
 using System.Net;
 using Newtonsoft.Json;
@@ -14,6 +14,11 @@ namespace Task4
         /*private decimal Fixpreis = 250000;*/
         private decimal member_Preis;
 
+        //public Haus(string inputDach, string inputFenster, string inputTüren, int inputZimmer, decimal inputPreis)
+        //    : this(inputDach, inputFenster, inputTüren, inputZimmer, inputPreis)
+        //{
+        //}
+
         /// <summary>
         /// Erzeugt ein neues Haus
         /// </summary>
@@ -22,18 +27,20 @@ namespace Task4
         /// <param name="Türen"></param>
         /// <param name="Preis"></param>
         /// <param name="Zimmer"></param>
-        public Haus(string inputDach, string inputFenster, string inputTüren, int inputZimmer, decimal inputPreis)
+        //[JsonConstructor]
+        public Haus(string Dach, string Fenster, string Türen, int Zimmer, decimal Preis)
         {
-            if (string.IsNullOrEmpty(inputDach)) throw new ArgumentException("Dach muss vorhanden sein.", nameof(inputDach));
-            if (string.IsNullOrEmpty(inputFenster)) throw new ArgumentException("Fenster müssen vorhanden sein.", nameof(inputFenster));
-            if (string.IsNullOrEmpty(inputTüren)) throw new ArgumentException("Türen müssen vorhanden sein.", nameof(inputTüren));
-            if (inputZimmer <= 0) throw new ArgumentException("Zimmer müssen vorhanden sein.", nameof(inputZimmer));
-            this.Dach = inputDach;
-            this.Fenster = inputFenster;
-            Türen = inputTüren;
-            Zimmer = inputZimmer;
-            UpdatePreis(inputPreis);
+            if (string.IsNullOrEmpty(Dach)) throw new ArgumentException("Dach muss vorhanden sein.", nameof(Dach));
+            if (string.IsNullOrEmpty(Fenster)) throw new ArgumentException("Fenster müssen vorhanden sein.", nameof(Fenster));
+            if (string.IsNullOrEmpty(Türen)) throw new ArgumentException("Türen müssen vorhanden sein.", nameof(Türen));
+            if (Zimmer <= 0) throw new ArgumentException("Zimmer müssen vorhanden sein.", nameof(Zimmer));
+            this.Dach = Dach;
+            this.Fenster = Fenster;
+            this.Türen = Türen;
+            this.Zimmer = Zimmer;
+            UpdatePreis(Preis);
         }
+
 
         public string Dach { get; }
 
@@ -63,10 +70,10 @@ namespace Task4
         public decimal Preis
         {
             get { return member_Preis; }
-            set
-                {
-                    member_Preis = value;
-                }
+           // set
+           //     {
+           //         member_Preis = value;
+           //     }
         }
 
         #endregion

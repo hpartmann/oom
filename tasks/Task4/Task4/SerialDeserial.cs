@@ -9,7 +9,7 @@ namespace Task4
     {
         public static void Run(IZimmerPreis[] Wohnkombinationen)
         {
-            var wohn1 = Wohnkombinationen[0];
+            var wohn1 = Wohnkombinationen[1];
 
             // 1. serialize eine Wohnkombi auf einen JSON string
             Console.WriteLine(JsonConvert.SerializeObject(wohn1));
@@ -20,6 +20,7 @@ namespace Task4
             // 3. serialize all items
             // ... include type, so we can deserialize sub-classes to interface type
             var settings = new JsonSerializerSettings() { Formatting = Formatting.Indented, TypeNameHandling = TypeNameHandling.Auto };
+            //var settings = new JsonSerializerSettings() { Formatting = Formatting.Indented };
             Console.WriteLine(JsonConvert.SerializeObject(Wohnkombinationen, settings));
 
             // 4. store json string to file "items.json" on your Desktop
@@ -31,11 +32,10 @@ namespace Task4
             // 5. deserialize items from "items.json"
             // ... and print Description and Price of deserialized items
             var textFromFile = File.ReadAllText(filename);
-            //var itemsFromFile = JsonConvert.DeserializeObject<IZimmerPreis[]>(textFromFile, settings);
-            //foreach (var x in itemsFromFile) Console.WriteLine($"{x} {x.AnzZimmer} {x.Preis}");
-            var itemsFromFile = JsonConvert.DeserializeObject(textFromFile, settings);
-            //foreach (var x in itemsFromFile) Console.WriteLine($"{x} {x.AnzZimmer} {x.Preis}");
-            Console.WriteLine(itemsFromFile);
+            var itemsFromFile = JsonConvert.DeserializeObject<IZimmerPreis[]>(textFromFile, settings);
+            foreach (var x in itemsFromFile) Console.WriteLine($"{x} {x.AnzZimmer} {x.Preis}");
+            //var itemsFromFile = JsonConvert.DeserializeObject(textFromFile, settings);
+            //Console.WriteLine(itemsFromFile);
         }
     }
 }
