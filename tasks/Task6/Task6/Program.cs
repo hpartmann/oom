@@ -5,7 +5,7 @@ using System.Linq;
 //using System.Text;
 //using System.Threading.Tasks;
 
-namespace Task4
+namespace Task6
 {
     class Program
     {
@@ -30,7 +30,6 @@ namespace Task4
             Console.WriteLine("----------------------------------------");
             Console.WriteLine("Regina: {0}|{1}|{2}|{3}|{4}", Regina.Dach, Regina.Fenster, Regina.Türen, Regina.Zimmer, Regina.Preis);
             Sonja.Zimmer = 3;
-            Console.WriteLine("Neue Zimmeranzahl für Haus Sonja: {0}", Sonja.Zimmer);
             Console.WriteLine("Sonja: {0}|{1}|{2}|{3}|{4}", Sonja.Dach, Sonja.Fenster, Sonja.Türen, Sonja.Zimmer, Sonja.Preis);
 
             var Wohnkombinationen = new IZimmerPreis[]
@@ -45,6 +44,8 @@ namespace Task4
             }
 
             SerialDeserial.Run(Wohnkombinationen);
+
+            Generate_Simple();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Net;
 using Newtonsoft.Json;
 
-namespace Task4
+namespace Task6
 {
     class Eigentumswohnung : IZimmerPreis
     {
@@ -30,7 +30,7 @@ namespace Task4
 
       //  public string Türen { get; }
 
-        public int Identifikationsnr { get; set; }
+        private int Identifikationsnr { get; set; }
 
         public int quadratmeter { get; }
 
